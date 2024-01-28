@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_responsive_login_ui/Home/HomeScreen.dart';
 import 'package:flutter_responsive_login_ui/api/signin_api.dart';
+import 'package:flutter_responsive_login_ui/pallete.dart';
 import 'package:flutter_responsive_login_ui/signup_screen.dart';
 import 'package:flutter_responsive_login_ui/verifyEmail/verify_email.dart';
 import 'package:flutter_responsive_login_ui/widgets/gradient_button.dart';
@@ -131,9 +132,28 @@ class _LoginScreenState extends State<LoginScreen> {
                 controller: emailController,
               ),
               const SizedBox(height: 15),
-              LoginField(
-                hintText: 'Password',
-                controller: passwordController,
+              TextFormField(
+                obscureText: true,
+                controller:
+                    passwordController, // Assign the controller to the TextFormField
+                decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.all(19),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: Pallete.borderColor,
+                      width: 1,
+                    ),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: Pallete.gradient2,
+                      width: 1,
+                    ),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  hintText: "password",
+                ),
               ),
               const SizedBox(height: 20),
               isLoading
