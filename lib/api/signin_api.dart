@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class SigninApi {
-  static const String baseUrl = 'http://10.240.69.41:5000/Login';
+  static const String baseUrl = 'http://192.168.137.113:5000/Login';
 
   Future<http.Response> loginUser(String email, String password) async {
     final String apiUrl = '$baseUrl/authenticate';

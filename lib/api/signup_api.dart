@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class SignupApi {
-  static const String baseUrl = 'http://10.240.69.41:5000/user';
+  static const String baseUrl = 'http://192.168.137.113:5000/user';
 
   Future<http.Response> registerUser(
       String fullname, String email, String password) async {
