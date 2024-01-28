@@ -11,6 +11,7 @@ class HomeScreen extends StatefulWidget {
 
 class _MyWidgetState extends State<HomeScreen> {
   late String email;
+  int selectedIndex = 0;
   @override
   void initState() {
     super.initState();
@@ -22,10 +23,22 @@ class _MyWidgetState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        Text(email),
-      ]),
-    ));
+      appBar: AppBar(title: Text(email)),
+      body: [Reservations, BookReservation, CancelReservation],
+      bottomNavigationBar: NavigationBar(
+        destinations: const [
+          NavigationDestination(icon: Icon(Icons.hotel), label: "Reservations"),
+          NavigationDestination(icon: Icon(Icons.add), label: "Book"),
+          NavigationDestination(
+              icon: Icon(Icons.remove), label: "Canel Reservation")
+        ],
+        selectedIndex: selectedIndex,
+        onDestinationSelected: (int index) {
+          setState(() {
+            selectedIndex = index;
+          });
+        },
+      ),
+    );
   }
 }
