@@ -37,7 +37,7 @@ class _MyWidgetState extends State<HomeScreen> {
           NavigationDestination(icon: Icon(Icons.hotel), label: "Reservations"),
           NavigationDestination(icon: Icon(Icons.add), label: "Book"),
           NavigationDestination(
-              icon: Icon(Icons.remove), label: "Canel Reservation")
+              icon: Icon(Icons.settings), label: "ChangePassword")
         ],
         selectedIndex: selectedIndex,
         onDestinationSelected: (int index) {
